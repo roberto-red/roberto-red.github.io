@@ -5,9 +5,9 @@ locale: es
 media_folder: static
 public_folder: /
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/spanish/blog'
+  - label: 'Blog'
+    name: 'blog'
+    folder: 'content/blog'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     media_folder: '/../../../static/blog/{{slug}}'
@@ -21,105 +21,48 @@ collections:
       - { label: 'Categorías', name: 'categories', widget: 'hidden', default: ["Universidad"]}
       - { label: 'Etiquetas', name: 'tags', widget: 'list'}
       - { label: 'Logo', name: 'image', widget: 'image', default: '/logos/logo-ofilibre-2025.jpg'}
-      - { label: 'Cuerpo', name: 'body', widget: 'markdown' }
+      - { label: 'Cuerpo', name: 'body', widget: 'richtext' }
 
-  - name: 'guias'
-    label: 'Guías'
-    folder: 'content/spanish/guias'
-    create: true
-    slug: '{{slug}}'
-    media_folder: '/../../../static/guias/{{slug}}'
-    public_folder: '../../guias/{{slug}}'
-    editor:
-      preview: true
-    fields:
-      - { label: 'Título', name: 'title', widget: 'string' }
-      - { label: 'Fecha de publicación', name: 'date', widget: 'datetime', date_format: 'YYYY-MM-DD' }
-      - { label: 'Descripción', name: 'description', widget: 'string' }
-      - { label: 'Logo', name: 'image', widget: 'image' }
-      - { label: 'Categorías', name: 'categories', widget: 'hidden', default: ["OfiLibre"]}
-      - { label: 'Etiquetas', name: 'tags', widget: 'list'}
-      - { label: 'Cuerpo', name: 'body', widget: 'markdown' }
+  - label: 'Quiénes somos'
+    name: 'editorial'
+    files:
+      - label: 'Editorial Academia Abierta'
+        name: 'editorial'
+        file: 'content/editorial/academia-abierta.md'
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+          - { label: 'Cuerpo', name: 'body', widget: 'richtext' }
+      - label: 'Cabecera'
+        name: 'cabecera'
+        file: 'content/editorial/cabecera.md'
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+          - { label: 'Cuerpo', name: 'body', widget: 'richtext' }
+      - label: 'Objetivos editoriales'
+        name: 'objetivos-editoriales'
+        file: 'content/editorial/objetivos-editoriales.md'
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+          - { label: 'Cuerpo', name: 'body', widget: 'richtext' }
+      - label: 'Declaración de principios'
+        name: 'declaracion-de-principios'
+        file: 'content/editorial/declaracion-de-principios.md'
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+          - { label: 'Cuerpo', name: 'body', widget: 'richtext' }
 
-  - name: 'fichas'
-    label: 'Fichas'
-    folder: 'content/spanish/fichas'
-    create: true
-    slug: '{{slug}}'
-    media_folder: '/../../../static/fichas/{{slug}}'
-    public_folder: '../../fichas/{{slug}}'
-    editor:
-      preview: true
-    fields:
-      - { label: 'Título', name: 'title', widget: 'string' }
-      - { label: 'Fecha de publicación', name: 'date', widget: 'datetime', date_format: 'YYYY-MM-DD' }
-      - { label: 'Logo', name: 'image', widget: 'image' }
-      - { label: 'Página web', name: 'website', widget: 'string' }
-      - { label: 'Página web (español)', name: 'website_es', widget: 'string', required: false }
-      - label: 'Licencias'
-        name: 'licenses'
-        widget: 'list'
+  - label: 'Propuestas'
+    name: 'propuestas'
+    files:
+      - label: 'Nuevas monografías'
+        name: 'nuevas-monografias'
+        file: 'content/propuestas/nuevas-monografias.md'
         fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-      - { label: 'MyApps', name: 'myapps', widget: 'boolean', default: false }
-      - { label: 'Código fuente (URL)', name: 'source', widget: 'string' }
-      - label: 'Guías de instalación'
-        name: 'installs'
-        widget: 'list'
+          - { label: 'Título', name: 'title', widget: 'string' }
+          - { label: 'Cuerpo', name: 'body', widget: 'richtext' }
+      - label: 'Políticas editoriales'
+        name: 'politicas-editoriales'
+        file: 'content/propuestas/politicas-editoriales.md'
         fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-          - { label: 'Formato', name: 'kind', widget: 'string', required: false }
-      - label: 'Tutoriales'
-        name: 'tutorials'
-        widget: 'list'
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-          - { label: 'Formato', name: 'kind', widget: 'string', required: false }
-      - label: 'Extras'
-        name: 'others'
-        widget: 'list'
-        required: false
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-      - label: 'Capturas de pantalla'
-        name: 'screenshots'
-        widget: 'list'
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'Archivo', name: 'file', widget: 'image' }
-          - { label: 'Atribución', name: 'attribution', widget: 'string', required: false }
-      - { label: 'Cuerpo', name: 'body', widget: 'markdown' }
-
-  - name: 'presentaciones'
-    label: 'Presentaciones'
-    folder: 'content/spanish/pres'
-    create: true
-    slug: '{{slug}}'
-    media_folder: '/../../../static/pres/{{slug}}'
-    public_folder: '../../pres/{{slug}}'
-    editor:
-      preview: true
-    fields:
-      - { label: 'Título', name: 'title', widget: 'string' }
-      - { label: 'Fecha de publicación', name: 'date', widget: 'datetime', date_format: 'YYYY-MM-DD' }
-      - { label: 'Descripción', name: 'description', widget: 'string' }
-      - { label: 'Logo', name: 'image', widget: 'image' }
-      - label: 'Transparencias'
-        name: 'transpas'
-        widget: 'object'
-        fields:
-          - { label: 'Archivo PDF', name: 'pdf', widget: 'file' }
-          - { label: 'Archivo ODP', name: 'odp', widget: 'file' }
-      - label: 'Extras'
-        name: 'extras'
-        required: false
-        widget: 'list'
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-      - { label: 'Cuerpo', name: 'body', widget: 'markdown' }
-
+          - { label: 'Título', name: 'title', widget: 'string' }
+          - { label: 'Cuerpo', name: 'body', widget: 'richtext' }

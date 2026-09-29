@@ -1,55 +1,54 @@
 # Navbar Menus
 [[nav]]
-name = "ofilibre"
-url = "ofilibre/"
-weight = 2
-
-[[nav]]
-name = "acciones"
-url = "acciones/"
-weight = 3
-
-[[nav]]
-name = "recursos"
-url = "recursos/"
-weight = 4
-hasChildren = true
+name = "editorial"
+url = "editorial/"
+weight = 1
 
   [[nav]]
-  parent = "recursos"
-  name = "Catálogo de materiales docentes libres"
-  url = "catalogo/"
+  parent = "editorial"
+  name = "Academia Abierta"
+  url = "editorial/academia-abierta/"
   weight = 1
 
   [[nav]]
-  parent = "recursos"
-  name = "Guías"
-  url = "guias/"
+  parent = "editorial"
+  name = "Cabecera editorial"
+  url = "editorial/cabecera/"
   weight = 2
 
   [[nav]]
-  parent = "recursos"
-  name = "Fichas"
-  url = "fichas/"
+  parent = "editorial"
+  name = "Objetivos editoriales"
+  url = "editorial/objetivos-editoriales/"
   weight = 3
 
   [[nav]]
-  parent = "recursos"
-  name = "Presentaciones"
-  url = "pres"
+  parent = "editorial"
+  name = "Declaración de principios"
+  url = "editorial/declaracion-de-principios"
   weight = 4
 
+[[nav]]
+name = "propuestas"
+url = "propuestas/"
+weight = 2
+
   [[nav]]
-  parent = "recursos"
-  name = "Código OfiLibre"
-  url = "https://gitlab.eif.urjc.es/ofilibre/code"
-  weight = 5
-  target = "_blank"
+  parent = "propuestas"
+  name = "Nuevas monografías"
+  url = "propuestas/nuevas-monografias"
+  weight = 1
+
+  [[nav]]
+  parent = "propuestas"
+  name = "Políticas editoriales"
+  url = "/propuestas/politicas-editoriales"
+  weight = 2
 
 [[nav]]
 name = "blog"
 url = "blog/"
-weight = 5
+weight = 3
 
 [[nav]]
 name = "contacto"
